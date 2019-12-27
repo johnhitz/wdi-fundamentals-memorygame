@@ -47,4 +47,42 @@ a {
 	font-weight: 600;
 	font-size: 18px;
 	margin: 0 20px;
+	border-bottom: 2px solid transparent;
+	background-color: #00A6B3;
+}
+
+a:hover {
+	background-color: RGBA(21, 110, 117, .5);
+}
+
+footer {
+	text-transform: uppercase;
+	padding: 0 20px;
+	background-color: #0D2C40;
+	color: white;
+	font-size: 14px;
+	letter-spacing: .08em;
+	font-weight: 500; 
+}
+
+.copyright {
+	float: left;
+}
+
+.message {
+	float: rigth;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: " ";
+	clear: both;
+	height: 0;
+	font-size: 0;
+}
+
+.name {
+	color: #F15B31;
+	font-weight: 700;
 }
