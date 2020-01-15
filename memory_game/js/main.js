@@ -20,7 +20,7 @@ const cards = [
     	cardImage: "images/king-of-diamonds.png"
     }
 ]
-const cardsInPlay = [];
+var cardsInPlay = [];
 
 function checkForMatch() {
 	if(cardsInPlay[0] === cardsInPlay[1]) {
@@ -44,12 +44,24 @@ function flipCard() {
 
 function createBoard() {
 	for (let i = 0; i < cards.length; i++) {
+		let reset = document.getElementById('reset');
+		reset.addEventListener('click', resetCards);
+
 		let cardElement = document.createElement('img');
 		cardElement.setAttribute('src', 'images/back.png');
 		cardElement.setAttribute('data-id', i);
 		cardElement.addEventListener('click', flipCard)
+
 		document.getElementById('game-board').appendChild(cardElement);
 	}
 }
+
+function resetCards() {
+	for (let i = 0; i < cards.length; i++) {
+		let el = document.getElementsByTagName('img')[i];
+		el = el.setAttribute('src', 'images/back.png');
+		cardsInPlay = [];
+	}
+};
 
 createBoard();
